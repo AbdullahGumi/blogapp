@@ -42,7 +42,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           working-directory: server 
-          run: npm run test:e2e --prefix ../client && npm run start:test
-#           start: npm run start:test
-#           command: npm run test:e2e --prefix ../client
+          start: npm run test:e2e --prefix ../client && npm run start:test
           wait-on: http://localhost:3001
