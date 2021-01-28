@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint .",
-    "start:test": "cross-env NODE_ENV=test node index.js"
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "test:e2e": "npm run test:e2e --prefix ../client"
   },
   "author": "Abdullah Gumi",
   "license": "ISC",
