@@ -37,7 +37,11 @@ jobs:
           GITHUB: true
       - name: start server for e2e test
         working-directory: server
-        run: npm run start:test
+        run: npm run start:test        
+        env:
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+          SECRET: ${{ secrets.SECRET }}
+          GITHUB: true
       - name: e2e tests 
         uses: cypress-io/github-action@v2
         with:
