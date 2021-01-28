@@ -33,10 +33,7 @@ module.exports = {
   ],
   "rules": {
     "no-mixed-spaces-and-tabs": 0,
-      "linebreak-style": [
-          "error",
-          "windows"
-      ],
+      "linebreak-style": 0,
       "eqeqeq": "error",
       "object-curly-spacing": [
           "error", "always"
