@@ -4,31 +4,30 @@ on:
   push:
     branches:
       - master
-
+  
 jobs:
   test_and_deployment_pipeline:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: server
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: npm install for frontend
-        working-directory: client    
-      - name: npm install
-        run: npm install
       - name: npm install for backend
-        working-directory: server    
-      - name: npm install
-        run: npm install        
-      - name: npm run lint for frontend
-        working-directory: client    
-      - name: lint
-        run : npm run eslint  
-      - name: npm run lint for backend
-        working-directory: server 
-      - name: lint
-        run : npm run eslint     
+        working-directory: server
+        run: npm ci
+      - name: npm install for frontend
+        working-directory: client
+        run: npm ci
+      - name: backend lint
+        working-directory: server
+        run: npm run eslint
+      - name: frontend lint
+        working-directory: client
+        run: npm run eslint
+      - name: build frontend
+        working-directory: client
+        run: npm run build
+      - name: test backend
+        working-directory: server
+        run: npm test        
