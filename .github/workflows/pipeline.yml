@@ -3,7 +3,7 @@ name: Test and deployment pipeline
 on:
   push:
     branches:
-      - master
+      - main
   
 jobs:
   test_and_deployment_pipeline:
