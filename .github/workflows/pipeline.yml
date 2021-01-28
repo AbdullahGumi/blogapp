@@ -4,10 +4,17 @@ on:
   push:
     branches:
       - main
-  
+env:
+  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+  SECRET: ${{ secrets.SECRET }}
+  GITHUB: true
+            
 jobs:
   test_and_deployment_pipeline:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -35,16 +42,10 @@ jobs:
           TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           SECRET: ${{ secrets.SECRET }}
           GITHUB: true
-      - name: start server for e2e test
-        working-directory: server
-        run: npm run start:test        
-        env:
-          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-          SECRET: ${{ secrets.SECRET }}
-          GITHUB: true
-      - name: e2e tests 
+      - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
-          working-directory: client
+          start: npm run start:test
+          working-directory: client 
           command: npm run test:e2e
           wait-on: http://localhost:3001
