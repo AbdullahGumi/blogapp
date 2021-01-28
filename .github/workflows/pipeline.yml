@@ -33,5 +33,5 @@ jobs:
         run: npm test        
         env:
           TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-          LOGIN_TOKEN: ${{ secrets.LOGIN_TOKEN }}
+          SECRET: ${{ secrets.SECRET }}
           GITHUB: true
