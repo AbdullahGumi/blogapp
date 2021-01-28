@@ -37,11 +37,7 @@ jobs:
         run: npm run build
       - name: test backend
         working-directory: server
-        run: npm test        
-        env:
-          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-          SECRET: ${{ secrets.SECRET }}
-          GITHUB: true
+        run: npm test
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
