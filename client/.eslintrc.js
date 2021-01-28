@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   "env": {
       "browser": true,
-      "es6": true
+      "es6": true,
+      "jest/globals": true
   },
   "extends": [ 
       "eslint:recommended",
@@ -15,17 +17,14 @@ module.exports = {
       "sourceType": "module"
   },
   "plugins": [
-      "react"
+      "react",
+      "jest"
   ],
   "rules": {
     "no-mixed-spaces-and-tabs": 0,
       "linebreak-style": [
           "error",
           "windows"
-      ],
-      "quotes": [
-          "error",
-          "single"
       ],
       "eqeqeq": "error",
       "object-curly-spacing": [

@@ -31,7 +31,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 
 if (process.env.NODE_ENV === 'test') {
-  const testRouter = require('./controllers/test')
+  const testRouter = require('./controllers/routerForTest')
   app.use('/api/testing', testRouter)
 }
 

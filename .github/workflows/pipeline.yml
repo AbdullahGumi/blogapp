@@ -1,0 +1,31 @@
+name: Test and deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test_and_deployment_pipeline:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: npm install for frontend
+        working-directory: client    
+      - name: npm install
+        run: npm install
+      - name: npm install for backend
+        working-directory: server    
+      - name: npm install
+        run: npm install        
+      - name: npm run lint for frontend
+        working-directory: client    
+      - name: lint
+        run : npm run eslint  
+      - name: npm run lint for backend
+        working-directory: server 
+      - name: lint
+        run : npm run eslint     
