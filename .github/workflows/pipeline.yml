@@ -43,5 +43,4 @@ jobs:
         with:
           working-directory: server 
           start: npm run test:e2e
-          command: npm run test:e2e
           wait-on: http://localhost:3001
