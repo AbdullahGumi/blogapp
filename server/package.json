@@ -9,7 +9,7 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint .",
     "start:test": "cross-env NODE_ENV=test node index.js",
-    "cypress": "npm run cypress:open --prefix ../client",
+    "cypress": "npm run test:e2e --prefix ../client",
     "test:e2e": "concurrently \"npm run start:test\" \"npm run cypress\""
   },
   "author": "Abdullah Gumi",
