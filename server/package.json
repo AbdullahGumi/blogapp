@@ -9,7 +9,8 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint .",
     "start:test": "cross-env NODE_ENV=test node index.js",
-    "test:e2e": "npm run cypress:open --prefix ../client"
+    "cypress": "npm run cypress:open --prefix ../client",
+    "test:e2e": "concurrently \"npm run start:test\" \"npm run cypress\""
   },
   "author": "Abdullah Gumi",
   "license": "ISC",
@@ -23,6 +24,7 @@
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
