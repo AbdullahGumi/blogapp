@@ -1,5 +1,6 @@
 describe('Blog app', function() {
   beforeEach(function() {
+    console.log('called blog')
     cy.request('POST', 'http://localhost:3001/api/testing/reset')
     const user = {
       name: 'app',
