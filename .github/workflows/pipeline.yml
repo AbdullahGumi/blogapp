@@ -22,10 +22,10 @@ jobs:
           node-version: '12.x'
       - name: npm install for backend
         working-directory: server
-        run: npm install
+        run: npm ci
       - name: npm install for frontend
         working-directory: client
-        run: npm install
+        run: npm ci
       - name: backend lint
         working-directory: server
         run: npm run lint
