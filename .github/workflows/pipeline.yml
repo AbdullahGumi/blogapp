@@ -30,8 +30,6 @@ jobs:
       - name: build frontend
         working-directory: client
         run: npm run build
-      - name: test backend
-        run: npm test
       - name: delpoy to heroku
         uses: akhileshns/heroku-deploy@v3.8.9 
         with:
