@@ -32,3 +32,10 @@ jobs:
         run: npm run build
       - name: test backend
         run: npm test
+      - name: delpoy to heroku
+        uses: akhileshns/heroku-deploy@v3.8.9 
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "fullstack-bloglist" 
+          heroku_email: "abdulgumi77@gmail.com"
+
