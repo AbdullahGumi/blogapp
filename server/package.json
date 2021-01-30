@@ -1,5 +1,9 @@
 {
   "name": "bloglist",
+  "jest": {
+    "modulePathIgnorePatterns ": ["<rootDir>/client/src/components"],
+    "testEnvironment": "node"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,8 +38,5 @@
   },
   "engines": {
     "node": "12.13.1"
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }

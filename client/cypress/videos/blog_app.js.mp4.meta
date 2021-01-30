@@ -1,0 +1,21 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=11228
+END=21963
+title=Blog app When logged in A blog can be created
+[CHAPTER]
+TIMEBASE=1/1000
+START=25243
+END=32734
+title=Blog app When logged in A user can like a blog
+[CHAPTER]
+TIMEBASE=1/1000
+START=34344
+END=40301
+title=Blog app When logged in user who created a blog can delete it
+[CHAPTER]
+TIMEBASE=1/1000
+START=32708
+END=46283
+title=Blog app When logged in blogs are ordered from highest likes to lowest
