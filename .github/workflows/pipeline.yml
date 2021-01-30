@@ -12,22 +12,17 @@ env:
 jobs:
   test_and_deployment_pipeline:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: server
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
       - name: npm install for backend
-        working-directory: server
-        run: npm ci
+        run: npm install
       - name: npm install for frontend
         working-directory: client
-        run: npm ci
+        run: npm install
       - name: backend lint
-        working-directory: server
         run: npm run lint
       - name: frontend lint
         working-directory: client
@@ -36,12 +31,10 @@ jobs:
         working-directory: client
         run: npm run build
       - name: test backend
-        working-directory: server
         run: npm test
       - name: e2e tests
         uses: cypress-io/github-action@v2
-        with:
-          working-directory: server 
+        with: 
           command: npm run test:e2e
           start: npm run start:test
           wait-on: http://localhost:3001
