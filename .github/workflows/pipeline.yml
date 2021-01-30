@@ -30,8 +30,6 @@ jobs:
       - name: build frontend
         working-directory: client
         run: npm run build
-      - name: test backend
-        run: npm test
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with: 
