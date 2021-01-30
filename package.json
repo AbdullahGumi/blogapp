@@ -9,7 +9,8 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint .",
     "start:test": "cross-env NODE_ENV=test node index.js",
-    "test:e2e": "cd client && npm run test:e2e"
+    "cypress": "npm run test:e2e --prefix ../client",
+    "test:e2e": "concurrently \"npm run start:test\" \"npm run cypress\""
   },
   "author": "Abdullah Gumi",
   "license": "ISC",
