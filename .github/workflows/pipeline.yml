@@ -5,8 +5,6 @@ on:
     branches:
       - main
 env:
-  MONGODB_URI: ${{ secrets.MONGODB_URI }} 
-  HD_SKIP_PREFLIGHT_CHECK: true
   TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
   SECRET: ${{ secrets.SECRET }}
   GITHUB: true
@@ -39,4 +37,7 @@ jobs:
           heroku_app_name: "fullstack-bloglist" 
           heroku_email: "abdulgumi77@gmail.com"
           healthcheck: 'https://fullstack-bloglist.herokuapp.com/health'
-          checkstring: 'ok'          
+          checkstring: 'ok'    
+        env: 
+          HD_MONGODB_URI: ${{ secrets.MONGODB_URI }} 
+          HD_SKIP_PREFLIGHT_CHECK: true      
