@@ -38,3 +38,7 @@ jobs:
           heroku_email: "abdulgumi77@gmail.com"
           healthcheck: 'https://fullstack-bloglist.herokuapp.com//health'
           checkstring: 'ok'
+        env:
+          HD_MONGO_URI: ${{ secrets.MONGODB_URI }} 
+          HD_SECRET: ${{secrets.SECRET}}
+          HD_SKIP_PREFLIGHT_CHECK: true          
