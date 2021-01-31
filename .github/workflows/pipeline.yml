@@ -36,4 +36,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "fullstack-bloglist" 
           heroku_email: "abdulgumi77@gmail.com"
-
+          healthcheck: 'https://fullstack-bloglist.herokuapp.com//health'
+          checkstring: 'ok'

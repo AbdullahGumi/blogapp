@@ -23,6 +23,12 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology
 
 app.use(cors());
 app.use(express.static('build'))
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+app.get('/version', (req, res) => {
+  res.send('1') 
+})
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 // });
