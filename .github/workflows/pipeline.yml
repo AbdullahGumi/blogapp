@@ -39,6 +39,6 @@ jobs:
           healthcheck: 'https://fullstack-bloglist.herokuapp.com//health'
           checkstring: 'ok'
         env:
-          HD_MONGO_URI: ${{ secrets.MONGODB_URI }} 
-          HD_SECRET: ${{secrets.SECRET}}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }} 
+          SECRET: ${{secrets.SECRET}}
           HD_SKIP_PREFLIGHT_CHECK: true          
