@@ -38,6 +38,7 @@ jobs:
           heroku_email: "abdulgumi77@gmail.com"
           healthcheck: 'https://fullstack-bloglist.herokuapp.com/health'
           checkstring: 'ok'    
+          rollbackonhealthcheckfailed: true
         env: 
           HD_MONGODB_URI: ${{ secrets.MONGODB_URI }} 
           HD_SKIP_PREFLIGHT_CHECK: true      
